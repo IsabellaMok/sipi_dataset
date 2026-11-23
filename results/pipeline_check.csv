@@ -1,0 +1,6 @@
+image,IWT_inverse_exact,payload_bits,BER_clean,pixels_clipped,MSE_stego,PSNR_stego,SSIM_stego,MSE_recovered,sideinfo_bits
+Baboon,True,4000,0.0,0,0.017208,65.77,0.999961,0.0,4005
+Airplane,True,4000,0.0,0,0.017216,65.77,0.999785,0.0,4005
+Sailboat,True,4000,0.0,0,0.016644,65.92,0.999914,0.0,4005
+Peppers,True,4000,0.0,0,0.017788,65.63,0.999867,0.0,4005
+Splash,True,4000,0.0,0,0.017658,65.66,0.999826,0.0,4005

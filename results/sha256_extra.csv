@@ -1,0 +1,13 @@
+condition,class_,n,sha256_digest_unchanged
+gaussian_s1,benign,100,0.0
+gaussian_s2,benign,100,0.0
+salt_pepper_0.1%,benign,100,0.0
+salt_pepper_0.5%,benign,100,0.0
+lsb_flip_1%,benign,100,0.0
+jpeg_q90,benign,100,0.0
+noise_patch_16px,malicious,100,0.0
+noise_patch_32px,malicious,100,0.0
+noise_patch_64px,malicious,100,0.0
+copy_move_16px,malicious,100,0.0
+copy_move_32px,malicious,100,0.0
+copy_move_64px,malicious,100,0.0
