@@ -1,0 +1,19 @@
+set,tau,FRR,FAR_16px_and_up
+calibration(5 SIPI),0,0.1934,0.1433
+calibration(5 SIPI),1,0.0426,0.2467
+calibration(5 SIPI),2,0.0098,0.35
+calibration(5 SIPI),3,0.0033,0.4467
+calibration(5 SIPI),4,0.0,0.52
+calibration(5 SIPI),5,0.0,0.59
+calibration(5 SIPI),6,0.0,0.6367
+calibration(5 SIPI),7,0.0,0.6733
+calibration(5 SIPI),8,0.0,0.6933
+heldout_images,0,0.1672,0.1733
+heldout_images,1,0.0492,0.33
+heldout_images,2,0.0033,0.42
+heldout_images,3,0.0,0.4967
+heldout_images,4,0.0,0.58
+heldout_images,5,0.0,0.6567
+heldout_images,6,0.0,0.6933
+heldout_images,7,0.0,0.72
+heldout_images,8,0.0,0.7467

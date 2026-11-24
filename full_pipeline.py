@@ -1,29 +1,14 @@
-"""
-full_pipeline.py - end-to-end pipeline for
-"A Multi-Layered Reversible Data Hiding Framework Integrating IWT and Dual Authentication Validation"
-
-THE FIVE LAYERS
-  L1 Secret sharing       CBSS splits the secret key into shares; any k shares rebuild it.
-  L2 Embedding            Integer 5/3 IWT + Hamming(7,4) matrix embedding into HL/LH/HH.
-                          Block positions are chosen by a secret key (keyed permutation).
-  L3 Error protection     ECC over the whole payload (none / repetition x3 / repetition x3 + BCH(31,21)).
-  L4 Dual authentication  Layer A = SHA-256 of the original cover (exact).  Layer B = keyed SimHash (LSH) of the
-                          LL sub-band (tolerant).  Decision per share: EXACT / TOLERATED / REJECTED.
-  L5 Recovery             Rebuild the key from k usable shares. Undo the embedding with side information
-                          to restore the cover (exact on a clean channel only).
-
-PAYLOAD HIDDEN IN EACH STEGO IMAGE (one image per share)
-  [ share bits | share check (64) | LSH hash (256) | SHA-256 of cover (256) ]  -> ECC -> Hamming(7,4) embedding
-
-ASSUMPTIONS (state them in the report)
-  * Sender and receiver share two secrets: the LSH key and the embedding-position key.
-  * The side information (flipped bit positions, 3 bits per sub-band block) reaches the receiver intact
-    (separate authenticated channel). Its size is reported so it can be counted in the payload budget.
-
-RUN
-  python full_pipeline.py          full run (check table + walkthrough + scenarios), writes results/pipeline_*.csv
-  python full_pipeline.py quick    fewer trials
-"""
+# --- project layout bootstrap (added by reorganize.py) ---
+import os as _os, sys as _sys
+from pathlib import Path as _P
+_ROOT = _P(__file__).resolve().parent
+while not (_ROOT / "full_pipeline.py").exists() and _ROOT != _ROOT.parent:
+    _ROOT = _ROOT.parent
+for _d in ("cbss", "data", "ecc", "eval", "iwt", "lsh"):
+    _sys.path.insert(0, str(_ROOT / _d))
+_sys.path.insert(0, str(_ROOT))
+_os.chdir(_ROOT)
+# --- end bootstrap ---
 import csv
 import hashlib
 import sys
